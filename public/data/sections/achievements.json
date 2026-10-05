@@ -1,0 +1,103 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Certificates",
+                "title_short_nav": "Certificates",
+                "title_long_prefix": "Here are my",
+                "title_long": "Career {{Certificates}}"
+            }
+        }
+    },
+
+    "articles": [
+        {
+            "id": 2,
+            "component": "ArticleThread",
+            "locales": {
+                "en": { "title": "" }
+
+            },
+            "settings": {
+                "max_rows_collapse_threshold": 4,
+                "order_items_by": "date",
+                "order_items_sort": "desc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "images/pictures/data-science.png",
+                    "date": {"year": 2026, "month": 6},
+                    "preview": {
+                        "links": [],
+                        "screenshots": ["data/certifications/data-science-certificate.jpg"],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "{{Data Science}}",
+                            "text": "Data Science Bootcamp from 365 careers"
+                        }
+                    }
+                },
+
+                {
+                    "id": 2,
+                    "img": "images/pictures/nlp.png",
+                    "date": {"year": 2025, "month": 9},
+                    "preview": {
+                        "links": [],
+                        "screenshots": ["data/certifications/nIp-specialization.jpg"],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "{{Natural Language Processing}}",
+                            "text": "Specialization certificate from DeepLearning.AI"
+                        }
+                    }
+                },
+
+                {
+                    "id": 3,
+                    "img": "images/pictures/python.png",
+                    "date": {"year": 2026, "month": 10},
+                    "preview": {
+                        "links": [],
+                        "screenshots": ["data/certifications/python-certificate.jpg"],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "{{Python}}",
+                            "text": "Python certificate from (100 days of code - python bootcamp)"
+                        }
+                    }
+                },
+
+                {
+                    "id": 4,
+                    "img": "images/pictures/project-management.png",
+                    "date": {"year": 2025, "month": 6},
+                    "preview": {
+                        "links": [],
+                        "screenshots": [
+                            "data/certifications/Project-Management-certificate.jpg"
+                        ],
+                        "screenshotsAspectRatio": "1:1",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "{{Project Management}}",
+                            "text": "Project Management certificate from Anchor University"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

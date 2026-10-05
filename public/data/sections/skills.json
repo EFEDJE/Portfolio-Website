@@ -1,0 +1,380 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Skills",
+                "title_short_nav": "Skills",
+                "title_long_prefix": "Explore",
+                "title_long": "My {{Skill Set}}"
+            }
+        }
+    },
+
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleCards",
+            "locales": {},
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "",
+                    "faIcon": "fa-solid fa-table-columns",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": null, "month": null},
+                    "link": {"href": "", "tooltipString": ""}
+                },
+                {
+                    "id": 2,
+                    "img": "",
+                    "faIcon": "fa-solid fa-database",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": null, "month": null},
+                    "link": {"href": "", "tooltipString": ""},
+                    "locales": {
+                        "en": {
+                            "title": "{{Data}} Science",
+                            "text": "I can extract insights from data using statistical and machine-learning methods!"
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "",
+                    "faIcon": "fa-solid fa-magnifying-glass-chart",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": null, "month": null},
+                    "link": {"href": "", "tooltipString": ""},
+                    "locales": {
+                        "en": {
+                            "title": "{{Data}} Analysis",
+                            "text": "I can clean, analyze, and interpret data."
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "img": "",
+                    "faIcon": "fa-solid fa-microchip",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": null, "month": null},
+                    "link": {"href": "", "tooltipString": ""},
+                    "locales": {
+                        "en": {
+                            "title": "{{AI}} Developer",
+                            "text": "I can build and implement AI systems to solve business problems."
+                        }
+                    }
+                }                
+            ]
+        },
+
+        {
+            "id": 2,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {"title": "Data Science & AI"}
+            },
+            "settings": {
+                "max_items_per_row": 3,
+                "max_rows_collapse_threshold": 6,
+                "order_items_by": "percentage",
+                "order_items_sort": "desc",
+                "round_icons": false
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "",
+                    "faIcon": "fa-brands fa-python",
+                    "faIconColors": {"bg": "", "fill": "#306998"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Python",
+                            "text": "I can build machine learning solutions to business problems.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "img": "images/pictures/pandas.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Pandas",
+                            "text": "I can clean, transform, and analyze complex datasets to uncover insights and prepare them for modeling.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "images/pictures/tensorflow.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": "#CC0000"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Tensorflow",
+                            "text": "I can build and train machine learning and deep learning models using TensorFlow.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "img": "images/pictures/pytorch.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Pytorch",
+                            "text": "I can develop and train deep learning models using PyTorch.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 5,
+                    "img": "images/pictures/matplotlib.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Matplotlib",
+                            "text": "I can create clear visualizations to explore and communicate data insights.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 6,
+                    "img": "",
+                    "faIcon": "fa-solid fa-database",
+                    "faIconColors": {"bg": "", "fill": "#0295c2", "fillLight": "#007396"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "MySQL",
+                            "text": "I can use MySQL to query, manage, and analyze data efficiently for business insights.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 7,
+                    "img": "images/pictures/azure.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "MS Azure",
+                            "text": "I can use Microsoft Azure to deploy and manage machine learning solutions in the cloud.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 8,
+                    "img": "images/pictures/excel.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": "", "fillLight": "#4F5B93"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Excel",
+                            "text": "I can use Excel to clean, analyze, and visualize data for business insights.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 9,
+                    "img": "images/pictures/powerbi.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "PowerBI",
+                            "text": "I can use Power BI to create insightful dashboards, and visualizations.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 10,
+                    "img": "images/pictures/tableau.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Tableau",
+                            "text": "I can use Power BI to create insightful dashboards, and visualizations.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 11,
+                    "img": "images/pictures/c.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "C",
+                            "text": "I can write efficient C programs to solve problems using structured and logical programming.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 12,
+                    "img": "images/pictures/c++.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": "#326CE5"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "C++",
+                            "text": "I can use C++ to develop efficient programs and solve complex computational problems.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 13,
+                    "img": "",
+                    "faIcon": "fa-brands fa-git",
+                    "faIconColors": {"bg": "", "fill": "#F05032"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Git",
+                            "text": "Complete understanding of Git for version control and collaboration.",
+                            "level": ""
+                        }
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": 3,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {"title": "Web Development"}
+            },
+            "settings": {
+                "max_items_per_row": 3,
+                "max_rows_collapse_threshold": 6,
+                "order_items_by": "percentage",
+                "order_items_sort": "desc",
+                "round_icons": false
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "",
+                    "faIcon": "fa-brands fa-html5",
+                    "faIconColors": {"bg": "", "fill": "#E34F26"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "HTML 5",
+                            "text": "I am proficient in HTML5 for building structured web pages.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "img": "",
+                    "faIcon": "fa-brands fa-css3-alt",
+                    "faIconColors": {"bg": "", "fill": "#1572B6"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "CSS 3",
+                            "text": "I can create responsive and visually appealing designs using CSS3.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "",
+                    "faIcon": "fa-brands fa-js",
+                    "faIconColors": {"bg": "", "fill": "#F7DF1E", "fillLight": "#a69617"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "JavaScript ES6+",
+                            "text": "Mastered JavaScript ES6+ for dynamic and interactive web applications.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "img": "",
+                    "faIcon": "fa-brands fa-react",
+                    "faIconColors": {"bg": "", "fill": "#61DAFB", "fillLight": "#317385"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "React",
+                            "text": "Complete understanding of React for building modern web applications.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 5,
+                    "img": "",
+                    "faIcon": "fa-brands fa-node-js",
+                    "faIconColors": {"bg": "", "fill": "#45FB13", "fillLight": "#317385"},
+                    "date": {"year": "", "month": ""},
+                    "percentage": "",
+                    "locales": {
+                        "en": {
+                            "title": "Node.js",
+                            "text": "I can build backend services and APIs using Node.js.",
+                            "level": ""
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

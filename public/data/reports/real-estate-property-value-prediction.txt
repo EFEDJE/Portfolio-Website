@@ -1,0 +1,231 @@
+REAL ESTATE PROPERTY PRICE PREDICTION
+Data Analysis and Machine Learning Report
+
+
+1. INTRODUCTION
+
+This project focuses on developing a machine learning system for predicting residential property prices based on property characteristics. The project uses a real estate dataset containing information about properties, including their size, number of bedrooms and bathrooms, condition, location, year built, and other features.
+
+The project applies data exploration, feature engineering, categorical encoding, visualization, and machine learning techniques to develop a model capable of estimating property prices.
+
+
+2. PROBLEM STATEMENT
+
+Property prices are influenced by several factors, making it difficult to accurately estimate the value of a property using only individual characteristics. A data-driven prediction system can use multiple property features simultaneously to provide estimated prices.
+
+The objective of this project was therefore to develop and evaluate regression models for predicting property prices and determine how effectively property characteristics can be used to estimate the target variable, price.
+
+
+3. DATASET
+
+The dataset contains 21,613 property records and 21 variables.
+
+The target variable is:
+
+- price
+
+The dataset contains property-related variables including:
+
+- bedrooms
+- bathrooms
+- sqft_living
+- sqft_lot
+- floors
+- waterfront
+- view
+- condition
+- grade
+- sqft_above
+- sqft_basement
+- yr_built
+- yr_renovated
+- zipcode
+- lat
+- long
+- sqft_living15
+- sqft_lot15
+
+The dataset also contains an ID variable and a date variable.
+
+
+4. DATA EXPLORATION
+
+The dataset was initially examined using Pandas to understand its structure, variables, data types, and statistical characteristics.
+
+The dataset contains 21,613 observations with no missing values in the variables examined. The target variable, price, has a mean value of approximately 540,088, with prices ranging from 75,000 to 7,700,000.
+
+The exploration also identified categorical variables such as waterfront and condition, as well as variables representing dates and geographical information.
+
+
+5. FEATURE ENGINEERING
+
+Feature engineering was performed to transform the original variables into a format that could be used effectively by machine learning models.
+
+5.1 Categorical Encoding
+
+Categorical variables were identified based on their number of unique values. Variables such as waterfront and condition contained categorical values.
+
+One-Hot Encoding was applied to the object-type categorical variables. This converted categories into numerical binary features that could be used by the regression models.
+
+For example, the waterfront variable was transformed into:
+
+- waterfront_N
+- waterfront_Y
+
+Similarly, the condition variable was converted into separate binary variables for each condition category.
+
+
+5.2 Property Age
+
+A new feature called building_age was created to represent the age of each property.
+
+This was calculated using:
+
+Building Age = 2026 - Year Built
+
+This feature provides the model with a direct representation of how old each property is.
+
+
+5.3 Renovation Feature
+
+A binary feature called has_been_renovated was created to indicate whether a property had been renovated.
+
+Properties with a renovation year different from zero were assigned a value of 1, while properties without a recorded renovation were assigned a value of 0.
+
+
+5.4 Time Since Renovation
+
+A time_since_renovation feature was also created using the renovation year and the year the property was built.
+
+Negative values were replaced with 1000.
+
+
+5.5 Removal of Unnecessary Variables
+
+The following variables were removed before modelling:
+
+- date
+- yr_renovated
+- id
+- zipcode
+
+The remaining variables were used as predictive features.
+
+
+6. DATA VISUALIZATION
+
+A correlation matrix was created using a Seaborn heatmap to examine relationships between the numerical features and the target variable.
+
+The correlation matrix provided a visual overview of the relationships between property characteristics and price and was used as part of the exploratory analysis.
+
+
+7. MODEL DEVELOPMENT
+
+The target variable was separated from the predictor variables.
+
+The dataset was divided into training and testing sets using an 80/20 split:
+
+- 80% training data
+- 20% testing data
+
+A random state of 42 was used to ensure reproducibility.
+
+
+8. LINEAR REGRESSION MODEL
+
+The first model developed was a Linear Regression model using Scikit-learn.
+
+The model was trained using the training dataset and subsequently used to generate predictions for the test dataset.
+
+The model achieved the following results:
+
+Mean Absolute Error (MAE): 128,077.79
+
+Mean Squared Error (MSE): 45,975,258,957.21
+
+R² Score: 0.696
+
+
+9. XGBOOST REGRESSION MODEL
+
+An XGBoost Regressor was subsequently developed to improve the prediction performance.
+
+RandomizedSearchCV was used for hyperparameter tuning. The search tested different combinations of parameters including:
+
+- n_estimators
+- max_depth
+- learning_rate
+- subsample
+- colsample_bytree
+- min_child_weight
+
+A total of 20 parameter combinations were evaluated using 5-fold cross-validation, resulting in 100 model fits.
+
+The optimization used negative Mean Absolute Error as the scoring metric.
+
+
+10. XGBOOST MODEL RESULTS
+
+The optimized XGBoost model was evaluated on the test dataset.
+
+The model achieved:
+
+Mean Absolute Error (MAE): 69,112.58
+
+Mean Squared Error (MSE): 19,837,824,432.54
+
+R² Score: 0.869
+
+
+11. MODEL COMPARISON
+
+The results show that the XGBoost model produced lower prediction errors than the Linear Regression model.
+
+Linear Regression:
+
+- MAE: 128,077.79
+- MSE: 45,975,258,957.21
+- R²: 0.696
+
+XGBoost:
+
+- MAE: 69,112.58
+- MSE: 19,837,824,432.54
+- R²: 0.869
+
+The XGBoost model therefore provided substantially better predictive performance on the test dataset used in the project.
+
+
+12. MODEL SERIALIZATION
+
+After model development and evaluation, the optimized XGBoost model was saved as:
+
+real_estate_predictor.pkl
+
+The model was serialized using Python's pickle library. This allows the trained model to be loaded later for making predictions without having to retrain it.
+
+
+13. TOOLS AND TECHNOLOGIES
+
+The following tools and technologies were used:
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- XGBoost
+- Pickle
+- Jupyter Notebook
+
+
+14. CONCLUSION
+
+This project developed a machine learning solution for predicting residential property prices using property characteristics.
+
+The workflow included data exploration, feature engineering, categorical encoding, visualization, train-test splitting, model development, and hyperparameter tuning.
+
+Two regression approaches were evaluated: Linear Regression and XGBoost Regression. The Linear Regression model achieved an R² score of 0.696, while the optimized XGBoost model achieved an R² score of 0.869 on the test dataset.
+
+The final XGBoost model was saved as a pickle file, making it possible to reuse the trained model for future property price predictions.

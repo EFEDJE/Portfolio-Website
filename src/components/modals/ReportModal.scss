@@ -1,0 +1,38 @@
+@import "/src/styles/extend.scss";
+
+#report-modal {
+    --header-size: 80px;
+
+    div.modal-header {
+        height: var(--header-size)!important;
+    }
+
+    div.report-modal-body {
+        padding: 0;
+        background-color: var(--theme-card-background);
+        overflow-y: auto;
+    }
+
+    div.report-modal-content {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 50px;
+
+        color: var(--theme-text);
+        font-family: inherit;
+        font-size: 15px;
+        line-height: 1.7;
+
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+
+    div.report-modal-spinner {
+        min-height: 400px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

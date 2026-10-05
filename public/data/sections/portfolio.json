@@ -1,0 +1,282 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Portfolio",
+                "title_short_nav": "Portfolio",
+                "title_long_prefix": "Take a look at",
+                "title_long": "My {{Portfolio}}"
+            }
+        }
+    },
+
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticlePortfolio",
+            "locales": {
+                "en": {
+                    "category_all": "All",
+                    "category_analysis": "Analysis",
+                    "category_web": "Web",
+                    "category_modelling": "Modelling"
+                },
+                "es": {
+                    "category_all": "Todo",
+                    "category_apps": "Apps",
+                    "category_web": "Web",
+                    "category_utilities": "Utilidades"
+                },
+                "fr": {
+                    "category_all": "Tout",
+                    "category_apps": "Apps",
+                    "category_web": "Web",
+                    "category_utilities": "Utilitaires"
+                },
+                "ko": {
+                    "category_all": "모두",
+                    "category_apps": "앱",
+                    "category_web": "웹",
+                    "category_utilities": "유틸리티"
+                }
+            },
+            "settings": {
+                "categorize_by": ["category_analysis", "category_web", "category_modelling"],
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "categoryId": "category_web",
+                    "img": "images/pictures/teamwork.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "preview": {
+                        "links": [
+                            {"href": "https://github.com/EFEDJE/Telecom-Customer-Churn-Predictor", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"},
+                            {"href": "https://telecom-customer-churn-predictor-xpeu.onrender.com/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+                        ],
+                        "reportPath": "reports/telecom-customer-churn-predictor.txt",
+                        "screenshots": [
+                            "images/pictures/customer-churn-predictor.png"
+                        ],
+                        "screenshotsAspectRatio": "16:9",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Customer Churn Predictor",
+                            "text": "A machine learning system that predicts customer churn using <b>Azure ML</b> and a deployed web application.",
+                            "tags": ["Python", "Azure ML", "React"]
+                        },
+                        "es": {
+                            "text": "Una <b>API RESTful</b> construida con <b>Node.js</b>, diseñada para el procesamiento de datos de alto rendimiento y la gestión de eventos en tiempo real.",
+                            "tags": ["API", "REST", "Backend"]
+                        },
+                        "fr": {
+                            "text": "Un backend <b>API RESTful</b> construit avec <b>Node.js</b>, conçu pour le traitement de données haute performance et la gestion d'événements en temps réel.",
+                            "tags": ["API", "REST", "Backend"]
+                        },
+                        "ko": {
+                            "text": "<b>Node.js</b>로 구축된 <b>RESTful API</b> 백엔드로, 고성능 데이터 처리 및 실시간 이벤트 처리용으로 설계되었습니다.",
+                            "tags": ["API", "REST", "Backend"]
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "categoryId": "category_analysis",
+                    "img": "images/pictures/emotional.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "preview": {
+                        "links": [
+                            {"href": "https://github.com/EFEDJE/Aspect-Based-Sentiment-Analysis", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
+                        ],
+                        "reportPath": "reports/absa-documentation.txt",
+                        "screenshots": [
+                            "images/pictures/opinion_mining.png"
+                        ],
+                        "screenshotsAspectRatio": "16:9",
+                        "youtubeVideo": "https://www.youtube.com/watch?v=TfgBHC5gvTI"
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Opinion Mining",
+                            "text": "Developed an Aspect-Based Sentiment Analysis system to analyze customer reviews by identifying specific aspects such as food, staff, and service, and determining the sentiment expressed toward each aspect.",
+                            "tags": ["python", "NLP", "powerbi"]
+                        },
+                        "es": {
+                            "text": "Un cliente de correo electrónico multiplataforma construido con <b>Flutter</b>, que ofrece comunicación eficiente y una interfaz intuitiva para la <b>gestión de correos electrónicos</b>.",
+                            "tags": ["Flutter", "Correo", "Comunicación"]
+                        },
+                        "fr": {
+                            "text": "Un client de messagerie multiplateforme construit avec <b>Flutter</b>, offrant une communication efficace et une interface intuitive pour <b>gérer les e-mails</b>.",
+                            "tags": ["Flutter", "E-mail", "Communication"]
+                        },
+                        "ko": {
+                            "text": "<b>Flutter</b>로 구축된 크로스플랫폼 이메일 클라이언트로, 이메일 <b>관리</b>를 위한 직관적인 UI를 통해 효율적인 소통을 제공합니다.",
+                            "tags": ["Flutter", "이메일", "소통"]
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "categoryId": "category_web",
+                    "img": "images/pictures/legal-document.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "preview": {
+                        "links": [
+                            {"href": "https://github.com/EFEDJE/Nigerian-Law-Expert", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"},
+                            {"href": "https://nigerian-law-expert.onrender.com/", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"}
+                        ],
+                        "reportPath": "reports/nigerian-law-expert-documentation.txt",
+                        "screenshots": [
+                            "images/pictures/nigerian-law-expert.png"
+                        ],
+                        "screenshotsAspectRatio": "16:9",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Nigerian Law Expert",
+                            "text": "A <b>RAG system</b> trained on the fifth alteration of the 1999 Nigerian constitution.",
+                            "tags": ["Python", "NLP", "React"]
+                        },
+                        "es": {
+                            "text": "Una app de productividad con todas las funciones, desarrollada con <b>React Native</b>, que permite a los usuarios organizar tareas, notas y proyectos en varios dispositivos. Ofrece <b>sincronización en la nube</b>, interfaz intuitiva y características de colaboración.",
+                            "tags": ["React", "Organización", "Notas"]
+                        },
+                        "fr": {
+                            "text": "Une application de productivité complète développée avec <b>React Native</b>, permettant aux utilisateurs d'organiser tâches, notes et projets sur plusieurs appareils. Elle offre <b>synchronisation cloud</b>, interface intuitive et fonctionnalités de collaboration.",
+                            "tags": ["React", "Organisation", "Notes"]
+                        },
+                        "ko": {
+                            "text": "<b>React Native</b>로 개발된 기능이 풍부한 생산성 앱으로, 사용자가 여러 기기에서 작업, 메모, 프로젝트를 <b>클라우드 동기화</b>와 직관적인 UI로 관리할 수 있습니다.",
+                            "tags": ["React", "조직", "메모"]
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "categoryId": "category_analysis",
+                    "img": "images/pictures/demographic.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "preview": {
+                        "links": [
+                            {"href": "https://github.com/EFEDJE/Customer-Segmentation", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
+                        ],
+                        "reportPath": "reports/customer-segmentation-documentation.txt",
+                        "screenshots": [
+                            "images/pictures/vip-customers.png",
+                            "images/pictures/loyal-customers.png",
+                            "images/pictures/lost-customers.png",
+                            "images/pictures/occasional-customers.png"
+                        ],
+                        "screenshotsAspectRatio": "16:9",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Customer Segmentation",
+                            "text": "Segmented customers based on purchasing behavior to identify distinct customer groups and support targeted business strategies.",
+                            "tags": ["python", "RFM analysis", "customer-segmentation"]
+                        },
+                        "es": {
+                            "title": "SmartCash",
+                            "text": "Un sitio web financiero construido con <b>Next.js</b>, que permite a los usuarios <b>seguir presupuestos</b> y gestionar su dinero con gráficos interactivos e ideas.",
+                            "tags": ["Next.js", "Finanzas", "Dinero"]
+                        },
+                        "fr": {
+                            "title": "SmartCash",
+                            "text": "Un site web financier construit avec <b>Next.js</b>, permettant aux utilisateurs de <b>suivre les budgets</b> et de gérer leur argent avec des graphiques interactifs et des analyses.",
+                            "tags": ["Next.js", "Finance", "Argent"]
+                        },
+                        "ko": {
+                            "title": "SmartCash",
+                            "text": "<b>Next.js</b>로 구축된 금융 웹사이트로, 사용자가 <b>예산을 추적</b>하고 상호작용하는 차트와 통찰력으로 자금을 관리할 수 있습니다.",
+                            "tags": ["Next.js", "금융", "돈"]
+                        }
+                    }
+                },
+                {
+                    "id": 5,
+                    "categoryId": "category_analysis",
+                    "img": "images/pictures/sale.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "preview": {
+                        "links": [],
+                        "reportPath": "reports/eda-documentation.txt",
+                        "screenshots": [
+                            "images/pictures/sales-eda.png"
+                        ],
+                        "screenshotsAspectRatio": "16:9",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Ecommerce Sales EDA",
+                            "text": "Analyzed e-commerce sales data using <b>Excel</b> to uncover sales trends, customer purchasing patterns, and key business insights.",
+                            "tags": ["Excel", "Data analysis", "Data Visualization"]
+                        },
+                        "es": {
+                            "title": "Snappy",
+                            "text": "Una app de fotografía potente diseñada con <b>Swift</b> para iOS y Android, con <b>controles avanzados de cámara</b>, herramientas de edición y filtros potenciados por IA para mejoras rápidas de fotos.",
+                            "tags": ["Swift", "Fotografía", "Cámara"]
+                        },
+                        "fr": {
+                            "title": "Snappy",
+                            "text": "Une application de photographie puissante conçue avec <b>Swift</b> pour iOS et Android, avec des <b>contrôles avancés de la caméra</b>, des outils d'édition et des filtres IA pour des améliorations rapides des photos.",
+                            "tags": ["Swift", "Photographie", "Caméra"]
+                        },
+                        "ko": {
+                            "title": "Snappy",
+                            "text": "<b>Swift</b>로 설계된 강력한 사진 앱으로, iOS 및 Android에서 <b>고급 카메라 제어</b>, 편집 도구, AI 기반 필터를 통해 빠르게 사진을 보정할 수 있습니다.",
+                            "tags": ["Swift", "사진", "카메라"]
+                        }
+                    }
+                },
+                {
+                    "id": 6,
+                    "categoryId": "category_modelling",
+                    "img": "images/pictures/estate-agent.png",
+                    "faIcon": "",
+                    "faIconColors": {"bg": "", "fill": ""},
+                    "preview": {
+                        "links": [{"href": "https://github.com/EFEDJE/Real-Estate-Property-Evaluation", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}],
+                        "reportPath": "reports/real-estate-property-value-prediction.txt",
+                        "screenshots": [],
+                        "screenshotsAspectRatio": "16:9",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Real Estate Price Prediction",
+                            "text": "Built a machine learning model to predict real estate prices based on property features, providing data-driven estimates to support property valuation.",
+                            "tags": ["python", "jupyter notebook", "Machine Learning"]
+                        },
+                        "es": {
+                            "title": "Sweet Scoops",
+                            "text": "Un sitio web de recetas construido con <b>WordPress</b> y WooCommerce, con una rica colección de <b>recetas de postres</b> y una plataforma de comercio electrónico integrada.",
+                            "tags": ["WooCommerce", "Comida", "Postres"]
+                        },
+                        "fr": {
+                            "title": "Sweet Scoops",
+                            "text": "Un site de recettes construit avec <b>WordPress</b> et WooCommerce, présentant une riche collection de <b>recettes de desserts</b> et une plateforme de commerce électronique intégrée.",
+                            "tags": ["WooCommerce", "Cuisine", "Desserts"]
+                        },
+                        "ko": {
+                            "title": "Sweet Scoops",
+                            "text": "<b>WordPress</b>와 WooCommerce로 구축된 레시피 웹사이트로, 풍부한 <b>디저트 레시피</b> 모음과 통합된 전자상거래 플랫폼을 제공합니다.",
+                            "tags": ["WooCommerce", "음식", "디저트"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

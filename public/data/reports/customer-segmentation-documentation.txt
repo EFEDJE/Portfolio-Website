@@ -1,0 +1,204 @@
+CUSTOMER SEGMENTATION USING RFM ANALYSIS AND K-MEDOIDS CLUSTERING
+
+1. INTRODUCTION
+
+Customer segmentation is the process of dividing customers into groups based on similar characteristics or behaviours. For businesses with large customer bases, segmentation can help identify differences in customer value, purchasing activity, and engagement.
+
+In this project, customer transaction data was analyzed using RFM analysis and unsupervised machine learning to identify groups of customers with similar purchasing behaviour.
+
+The project combines data cleaning, feature engineering, exploratory analysis, outlier detection, clustering, and business analysis. The final customer groups were also visualized using a Power BI dashboard.
+
+2. PROBLEM STATEMENT
+
+The original dataset contained individual customer transactions, but individual transactions do not provide a complete picture of how valuable or active a customer is.
+
+The goal of this project was to transform the transaction data into meaningful customer-level information and use it to identify distinct groups of customers.
+
+The analysis focused on understanding how recently customers purchased, how frequently they purchased, and how much they spent, and then using these characteristics to identify different customer segments.
+
+3. DATASET
+
+The project used the Online Retail dataset, which contained over 541,000 transactions and information about products, quantities, prices, transaction dates, customers, and countries.
+
+Because the data was transaction-level data, it first had to be cleaned and aggregated before it could be used for customer segmentation.
+
+4. DATA CLEANING
+
+The first stage of the project involved cleaning the transaction data.
+
+Records without a Customer ID were removed because customer identification was necessary for the segmentation analysis.
+
+Transactions with invalid quantities or prices were also removed. This included transactions where the quantity or unit price was zero or negative.
+
+After cleaning, 397,884 valid transactions remained, representing 4,338 identifiable customers.
+
+5. RFM FEATURE ENGINEERING
+
+RFM analysis was used to represent each customer's purchasing behaviour using three measures: Recency, Frequency, and Monetary Value.
+
+Recency describes how recently a customer made a purchase. Customers with smaller recency values had purchased more recently.
+
+Frequency describes how often a customer made purchases. In this project, frequency was based on the number of unique invoices associated with each customer.
+
+Monetary Value represents how much a customer had spent. This was calculated from the total value of their transactions.
+
+These three measures transformed the original transaction data into a customer-level dataset that could be used for clustering.
+
+6. EXPLORING THE RFM DATA
+
+Before applying clustering, the distributions of Recency, Frequency, and Monetary Value were examined.
+
+The analysis showed that the RFM variables were heavily skewed. A relatively small number of customers had very high purchasing frequency or spending compared with the majority of customers.
+
+This is important for clustering because extreme values can have a large influence on distance-based algorithms.
+
+To reduce the effect of this skewness, logarithmic transformations were applied to the RFM variables.
+
+7. OUTLIER DETECTION
+
+After transforming the RFM variables, multivariate outlier detection was performed.
+
+Rather than looking at Recency, Frequency, and Monetary Value independently, Mahalanobis distance was used to identify customers whose overall RFM profile was unusually different from the rest of the customer base.
+
+A statistical threshold based on the chi-square distribution was used to determine which observations should be considered multivariate outliers.
+
+This process reduced the customer population from 4,338 to 4,245 customers before clustering.
+
+Removing these extreme observations helped prevent unusual customer profiles from disproportionately influencing the clustering process.
+
+8. FEATURE SCALING
+
+The cleaned RFM variables were standardized before clustering.
+
+Scaling was necessary because the three variables existed on different numerical scales. Standardization ensured that Recency, Frequency, and Monetary Value could contribute more comparably when calculating distances between customers.
+
+The resulting standardized RFM data was then used as input for the clustering algorithm.
+
+9. DETERMINING THE NUMBER OF CLUSTERS
+
+One of the most important decisions in the project was determining how many customer groups should be created.
+
+Rather than choosing a number of clusters arbitrarily, K-Medoids models were evaluated using different values of K, ranging from 2 to 39 clusters.
+
+The Silhouette Score was used to measure how well customers fit within their assigned clusters. A higher score indicates that customers are generally more similar to others within their own cluster than to customers in other clusters.
+
+The highest Silhouette Score occurred when three clusters were used, with a score of approximately 0.372.
+
+However, the analysis did not stop at simply selecting the number with the highest score. Three clusters produced groups that were relatively broad and did not provide enough detail for the intended business analysis.
+
+The clustering structure was therefore explored further, including an analysis of clustering inertia and the behaviour of customers within different cluster configurations.
+
+10. FINAL K-MEDOIDS MODEL
+
+A six-cluster K-Medoids model was ultimately selected for the technical segmentation.
+
+K-Medoids was chosen because it groups customers according to their similarity while representing each cluster using an actual customer observation rather than a calculated centroid.
+
+The six-cluster solution provided a more detailed representation of the different purchasing behaviours present in the customer base.
+
+The resulting clusters were then examined using their average Recency, Frequency, and Monetary Value to understand what distinguished one cluster from another.
+
+11. INTERPRETING THE CLUSTERS
+
+The clustering algorithm produced six technical clusters, but these clusters were not treated as six completely independent business segments.
+
+Instead, their RFM characteristics were examined and clusters with similar behaviour were combined where appropriate.
+
+One cluster contained customers who purchased very recently, purchased frequently, and generated substantially more revenue than the other groups. This group was identified as the VIP segment.
+
+Another group consisted of customers who were also relatively recent and frequent purchasers, but with lower overall spending than the VIP group. These customers were classified as Loyal Customers.
+
+Two clusters represented customers who had relatively recent purchasing activity but purchased less frequently and generated lower monetary value. These were combined into the Occasional Customers segment.
+
+The remaining two clusters represented customers who had not purchased recently and generally had low purchasing frequency and monetary value. These were combined into the Lost Customers segment.
+
+12. FINAL CUSTOMER SEGMENTS
+
+The final segmentation therefore consisted of four business-oriented groups:
+
+VIPs
+
+These were the most valuable customers, characterised by recent purchases, high purchase frequency, and high spending.
+
+Loyal Customers
+
+These customers showed strong and relatively consistent purchasing behaviour, although their activity and spending were below the VIP group.
+
+Occasional Customers
+
+These customers had made relatively recent purchases but purchased less frequently and generated lower monetary value.
+
+Lost Customers
+
+These customers had not purchased for a considerable period and generally demonstrated low purchasing frequency and spending.
+
+13. ANALYZING THE CUSTOMER SEGMENTS
+
+After creating the segments, the project moved beyond simply assigning customers to groups.
+
+The segments were analyzed according to their revenue contribution, purchasing behaviour, and product preferences.
+
+Revenue analysis was used to determine how much of the overall revenue was generated by each segment.
+
+Product-level analysis was also performed to examine which products were purchased by different customer groups. This helped provide additional context about what each segment was actually buying rather than relying solely on their RFM characteristics.
+
+The project also examined customer activity over time by looking at the number of customers belonging to each segment across different months.
+
+14. POWER BI DASHBOARD
+
+The results of the analysis were incorporated into a Power BI dashboard.
+
+Python was used for the main analytical workflow, including data cleaning, RFM feature engineering, outlier detection, clustering, and segment analysis.
+
+Power BI was then used to present the results in a more accessible business format.
+
+This created a clear separation between the data-science workflow and the business-intelligence layer of the project.
+
+15. COMPLETE PROJECT WORKFLOW
+
+The overall process was:
+
+Raw transaction data was first cleaned by removing records without customer IDs and invalid transactions.
+
+The cleaned transactions were then aggregated at the customer level to calculate Recency, Frequency, and Monetary Value.
+
+The distributions of the RFM variables were examined, and logarithmic transformations were applied to reduce skewness.
+
+Mahalanobis distance was then used to identify multivariate outliers, reducing the dataset from 4,338 customers to 4,245 customers.
+
+The RFM features were standardized before clustering.
+
+Different numbers of clusters were tested using K-Medoids, with Silhouette Score used to evaluate the quality of the clustering.
+
+Although three clusters produced the highest Silhouette Score, the resulting groups were considered too broad for the intended business analysis. A six-cluster solution was therefore explored and selected for the final technical clustering.
+
+The six clusters were then profiled and interpreted based on their RFM characteristics. Similar clusters were consolidated into four business-oriented segments: VIPs, Loyal Customers, Occasional Customers, and Lost Customers.
+
+Finally, the segments were analyzed further and presented through a Power BI dashboard.
+
+16. TOOLS AND TECHNOLOGIES
+
+The project was developed using:
+
+* Python
+* Pandas
+* NumPy
+* SciPy
+* Scikit-learn
+* Scikit-learn-extra
+* Matplotlib
+* Seaborn
+* K-Medoids
+* Power BI
+
+17. CONCLUSION
+
+This project demonstrates an end-to-end customer segmentation workflow using transactional data and unsupervised machine learning.
+
+The analysis began with raw transaction data and transformed it into meaningful customer-level RFM features. The data was then examined for skewness and multivariate outliers before being standardized for clustering.
+
+Multiple cluster configurations were evaluated rather than arbitrarily choosing the number of customer groups. Although three clusters produced the strongest Silhouette Score, a six-cluster solution was ultimately used because it provided a more useful level of behavioural detail.
+
+The six technical clusters were then interpreted and consolidated into four business-oriented segments: VIPs, Loyal Customers, Occasional Customers, and Lost Customers.
+
+The project demonstrates how unsupervised machine learning can be combined with business analysis to move from raw transaction data to meaningful customer profiles and actionable business insights.

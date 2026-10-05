@@ -1,0 +1,236 @@
+TELECOM CUSTOMER CHURN PREDICTOR
+
+1. Introduction
+
+The Telecom Customer Churn Predictor is an end-to-end machine learning application designed to predict whether a telecom customer is likely to leave a service provider.
+
+The project combines machine learning with cloud deployment using Microsoft Azure Machine Learning. Instead of keeping the trained model inside a local Python environment, the model was trained and deployed through Azure ML and exposed through an online endpoint. A web application was then developed to allow users to submit customer information and receive a churn prediction.
+
+The project demonstrates the complete process of taking a machine learning model from data preparation and training to cloud deployment and real-world usage.
+
+2. Problem Statement
+
+Customer churn is an important business problem for telecommunications companies. When customers leave a service provider, the company loses recurring revenue and must spend additional resources acquiring replacement customers.
+
+The objective of this project was to develop a machine learning system capable of predicting customer churn so that customers who are likely to leave can potentially be identified before they churn.
+
+The project therefore focuses on answering the following question:
+
+"Based on a customer's characteristics and service information, is the customer likely to churn?"
+
+3. Project Objectives
+
+The main objectives of the project were to:
+
+* Develop a machine learning model for customer churn prediction.
+* Handle the class imbalance present in the churn dataset.
+* Use Azure Machine Learning to train and manage the machine learning model.
+* Evaluate the performance of the trained model.
+* Register the trained model in Azure ML.
+* Deploy the model as a real-time online endpoint.
+* Develop a web application that communicates with the deployed model.
+* Provide users with an accessible interface for obtaining churn predictions.
+
+4. Dataset
+
+The project uses a telecommunications customer dataset containing information about customers, their services, account information, and churn status.
+
+The target variable is:
+
+Churn
+
+The target identifies whether a customer has left the telecommunications service.
+
+The dataset contains customer attributes covering areas such as:
+
+* Customer demographics
+* Account information
+* Contract information
+* Internet services
+* Phone services
+* Billing information
+* Monthly charges
+* Total charges
+* Customer tenure
+
+5. Data Preparation
+
+The dataset was loaded into the Azure Machine Learning environment as a data asset.
+
+The dataset was inspected before model development to understand its structure and identify potential data-quality issues.
+
+The target variable was found to be imbalanced, with customers who did not churn representing the majority class.
+
+Because the project was developed using Azure Machine Learning AutoML, the machine learning workflow was allowed to handle important aspects of model preparation and training rather than manually implementing every stage in a local notebook.
+
+6. Machine Learning Approach
+
+Azure Machine Learning AutoML was used to develop the classification model.
+
+AutoML was selected because it provides an automated machine learning workflow for classification problems and can evaluate different machine learning approaches while handling important parts of the modelling process.
+
+The workflow consisted of:
+
+1. Preparing the customer churn dataset.
+2. Creating the dataset as an Azure ML data asset.
+3. Selecting `Churn` as the target column.
+4. Configuring the AutoML classification experiment.
+5. Training and evaluating candidate models.
+6. Selecting the best-performing model.
+7. Registering the model in Azure ML.
+8. Deploying the model as an online endpoint.
+
+7. Model Training with Azure Machine Learning
+
+The Azure ML workspace was accessed programmatically using the Azure ML SDK.
+
+The data asset was identified in the workspace and loaded for the AutoML experiment.
+
+The model training process was performed within Azure Machine Learning rather than relying entirely on the local computer.
+
+This approach demonstrates how machine learning workloads can be moved from a development environment into a cloud-based machine learning platform.
+
+8. Model Evaluation
+
+The selected AutoML model achieved a weighted AUC score of approximately:
+
+0.90002
+
+AUC was used as an important evaluation metric because the churn target was imbalanced.
+
+The weighted AUC score indicates that the trained model was able to distinguish between customers who churned and customers who remained with the service effectively on the evaluation data used by the Azure ML experiment.
+
+9. Model Registration
+
+After the AutoML experiment was completed, the selected model was registered within the Azure Machine Learning workspace.
+
+Model registration provides a way to manage the trained model as a reusable machine learning asset rather than keeping the model only inside the original training environment.
+
+This also made it possible to use the model for deployment.
+
+10. Cloud Deployment
+
+The trained model was deployed through Azure Machine Learning as a live online endpoint.
+
+The online endpoint provides a way for external applications to send customer information to the deployed machine learning model and receive a prediction in response.
+
+The deployment therefore transformed the model from a development artifact into a service that could be accessed by an application.
+
+11. Web Application
+
+A web application was developed as the user interface for the prediction system.
+
+The application allows a user to enter customer information and submit it for prediction.
+
+The application communicates with the deployed Azure ML endpoint, which processes the customer information and returns the model's prediction.
+
+The overall system can therefore be represented as:
+
+User
+↓
+Web Application
+↓
+Azure ML Online Endpoint
+↓
+Machine Learning Model
+↓
+Churn Prediction
+↓
+Web Application
+
+12. System Architecture
+
+The project consists of three main components:
+
+Data and Machine Learning Layer
+
+The customer dataset is stored and managed as an Azure ML data asset. Azure Machine Learning is responsible for the machine learning experiment and model management.
+
+Model Deployment Layer
+
+The selected model is registered and deployed as an Azure ML online endpoint.
+
+Application Layer
+
+The web application provides the interface through which users submit customer information and receive predictions from the deployed model.
+
+13. Technologies Used
+
+Machine Learning
+
+* Python
+* Pandas
+* Scikit-learn
+* Azure Machine Learning
+* AutoML
+
+Cloud
+
+* Microsoft Azure
+* Azure Machine Learning
+* Azure ML Online Endpoints
+
+Web Development
+
+* React
+* Vite
+* JavaScript
+* HTML
+* CSS
+
+Deployment
+
+* Azure Machine Learning
+* Render
+
+14. End-to-End Workflow
+
+The complete workflow of the project was:
+
+1. Obtain and inspect the customer churn dataset.
+2. Identify the churn variable as the prediction target.
+3. Prepare the dataset for machine learning.
+4. Upload/register the dataset as an Azure ML data asset.
+5. Configure an AutoML classification experiment.
+6. Train and evaluate candidate models using Azure ML.
+7. Select the best-performing model.
+8. Register the trained model.
+9. Deploy the model through an Azure ML online endpoint.
+10. Develop the React web application.
+11. Connect the web application to the deployed prediction endpoint.
+12. Deploy the web application online.
+13. Allow users to submit customer information and obtain churn predictions.
+
+15. Business Application
+
+A churn prediction system can help telecommunications businesses identify customers who may be at risk of leaving.
+
+Instead of waiting until customers have already cancelled their subscriptions, predictions can potentially be used to identify customers for further investigation or retention activities.
+
+For example, a business could use churn predictions as one input when deciding which customers should receive:
+
+* Customer-service follow-ups
+* Retention offers
+* Plan recommendations
+* Service support
+* Other targeted retention activities
+
+The prediction itself does not determine what action should be taken. It provides an additional data-driven signal that can support business decision-making.
+
+16. Key Result
+
+The Azure ML AutoML experiment produced a model with a weighted AUC of approximately 0.90002.
+
+More importantly, the project demonstrated the complete transition from machine learning development to cloud deployment:
+
+Dataset → Azure ML → AutoML → Model Registration → Online Endpoint → Web Application
+
+17. Conclusion
+
+The Telecom Customer Churn Predictor demonstrates an end-to-end machine learning deployment workflow using Microsoft Azure.
+
+The project goes beyond developing a predictive model in a notebook by using Azure Machine Learning for data management, automated model training, model registration, and deployment.
+
+The resulting model was exposed through an Azure ML online endpoint and integrated with a React-based web application, allowing users to interact with the machine learning system through a web interface.
+
+This project therefore demonstrates practical experience with machine learning, cloud-based model deployment, API-based inference, and the integration of machine learning into a usable software application.

@@ -1,0 +1,163 @@
+Nigerian Law Expert
+
+1. Project Overview
+
+Nigerian Law Expert is a Retrieval-Augmented Generation (RAG) application built to answer questions using the Constitution of the Federal Republic of Nigeria as its knowledge base.
+
+The system combines document processing, semantic embeddings, vector similarity search, and a generative language model. The application consists of a Python backend and web frontend and was deployed using Render.
+
+2. Knowledge Base
+
+The source document was the Nigerian Constitution stored as:
+
+`data/nigeria_constitution.pdf`
+
+The relevant constitutional content was extracted from pages 23–214, before the Schedules.
+
+The document contained 318 constitutional sections, which were processed into smaller text units for retrieval.
+
+3. Document Processing
+
+The extracted constitutional text was divided into overlapping chunks.
+
+The configuration used was:
+
+Chunk size: 1,000 characters
+Overlap: 150 characters
+Final chunks: 558
+
+The overlap was used to preserve context when information spans the boundary between two chunks.
+
+The resulting chunks were stored in `chunks.pkl`.
+
+4. Text Embeddings
+
+Each chunk was converted into a numerical vector using:
+
+BAAI/bge-small-en-v1.5
+
+This converts constitutional text into embeddings that represent its semantic meaning.
+
+The same embedding model is later used to convert a user's question into a vector, allowing the question to be compared with the constitutional content based on semantic similarity rather than exact keyword matching.
+
+5. Vector Indexing
+
+The generated embeddings were stored in a FAISS vector index.
+
+The project used:
+
+IndexFlatIP with normalized embeddings.
+
+Because the vectors were normalized, the inner product effectively represents cosine similarity.
+
+The index performs similarity search against the stored constitutional embeddings and returns the chunks with the highest similarity to the user's question.
+
+The completed index was saved as:
+
+`vector.index`
+
+The two retrieval artifacts therefore work together:
+
+* `vector.index` — contains the embedded vectors.
+* `chunks.pkl` — contains the corresponding original text.
+
+6. Retrieval Algorithm
+
+The retrieval process begins when a user submits a question.
+
+The question is passed through `BAAI/bge-small-en-v1.5` to produce a query embedding.
+
+The query embedding is then searched against the FAISS `IndexFlatIP` index.
+
+FAISS calculates the similarity between the query vector and the stored constitutional vectors and returns the highest-scoring results.
+
+The returned vector positions are used to retrieve the corresponding text from `chunks.pkl`.
+
+The retrieval pipeline is therefore:
+
+User question → BGE embedding → FAISS similarity search → relevant constitutional chunks
+
+7. Retrieval-Augmented Generation
+
+The retrieved chunks are passed to the generative model together with the user's question.
+
+The project uses Google's Gemini model through the `google.genai` library.
+
+The generation process is:
+
+Question + Retrieved constitutional context → Gemini → Generated response
+
+This means the model receives relevant constitutional material before generating its answer instead of relying only on its pretrained knowledge.
+
+8. Backend
+
+The backend was implemented in Python and handles the complete RAG pipeline.
+
+It loads:
+
+* The FAISS vector index.
+* The stored constitutional chunks.
+* The embedding model.
+* The Gemini API.
+
+The backend can be started with:
+
+`python -m app.main`
+
+It receives questions from the frontend, performs retrieval, sends the retrieved context to Gemini, and returns the generated response.
+
+9. Frontend
+
+A web frontend was developed to provide the user interface.
+
+The frontend sends user questions to the backend and displays the resulting responses.
+
+The frontend therefore handles presentation, while the Python backend handles document retrieval and AI generation.
+
+10. Deployment
+
+The completed application was deployed using Render.
+
+The deployed architecture consists of:
+
+Frontend → Python Backend → Embedding Model → FAISS → Constitutional Context → Gemini → Response
+
+11. Technologies
+
+* Python
+* FAISS
+* `BAAI/bge-small-en-v1.5`
+* Google Gemini
+* `google.genai`
+* NumPy
+* Pickle
+* React
+* Render
+
+12. Complete Workflow
+
+The complete system operates as follows:
+
+1. Extract the relevant constitutional content from the PDF.
+2. Identify the 318 constitutional sections.
+3. Split the content into 558 chunks using a 1,000-character size and 150-character overlap.
+4. Generate embeddings using `BAAI/bge-small-en-v1.5`.
+5. Normalize the embeddings.
+6. Store them in a FAISS `IndexFlatIP` index.
+7. Save the index as `vector.index`.
+8. Save the original chunks as `chunks.pkl`.
+9. Convert each user question into an embedding.
+10. Perform similarity search against the FAISS index.
+11. Retrieve the most relevant constitutional chunks.
+12. Pass the question and retrieved context to Gemini.
+13. Return the generated response through the web application.
+
+13. Limitations
+
+The system is limited to the constitutional material included in its knowledge base. It does not provide comprehensive coverage of Nigerian legislation, case law, or other legal documents.
+
+Because the final response is generated by an LLM, retrieved constitutional passages should be checked when dealing with legally significant questions.
+
+14. Conclusion
+
+The project implements a complete RAG pipeline using the Nigerian Constitution as a domain-specific knowledge base. It combines semantic embedding, FAISS vector retrieval, contextual generation with Gemini, backend development, frontend development, and cloud deployment in one application.

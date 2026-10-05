@@ -1,0 +1,25 @@
+{
+    "name": "Efedje Victor",
+
+    "profilePictureUrl": "images/pictures/profile-pic.png",
+    "resumePdfUrl": "",
+
+    "statusCircleVisible": true,
+    "statusCircleVariant": "available",
+    "statusCircleHoverMessage": "status_message_available_for_freelance",
+
+    "locales": {
+        "en": {
+            "localized_name": "Efedje Victor",
+            "localized_name_stylized": " [[Efedje {{Victor}}]]",
+            "status_message_available_for_freelance": "Available for freelance!",
+            "roles": [
+                "Data Scientist",
+                "Data Analyst",
+                "AI Developer"
+            ],
+            "name_pronunciation_ipa": "/A-feyjay Victor/",
+            "name_pronunciation_audio_url": "audio/name-pronunciation.mp3"
+        }
+    }
+}

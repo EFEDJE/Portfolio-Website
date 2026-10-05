@@ -1,0 +1,203 @@
+ASPECT-BASED SENTIMENT ANALYSIS OF CUSTOMER REVIEWS
+
+1. INTRODUCTION
+
+Customer reviews contain valuable information about how customers perceive different aspects of a product or service. Traditional sentiment analysis generally assigns one overall sentiment to an entire review, but this can hide important differences within the same review.
+
+For example, a customer may describe the food positively while expressing dissatisfaction with the staff or service. Treating the entire review as simply positive or negative would therefore lose important information.
+
+This project develops an Aspect-Based Sentiment Analysis (ABSA) system to identify specific aspects mentioned in customer reviews and determine the sentiment expressed toward each aspect.
+
+The project focuses on customer reviews of a restaurant business and examines aspects such as food, staff, and service. This provides more detailed information about customer experiences than conventional document-level sentiment analysis.
+
+2. PROBLEM STATEMENT
+
+Traditional sentiment analysis determines the overall sentiment of a customer review but does not necessarily identify what the customer is expressing that sentiment about.
+
+For example:
+
+"The food was excellent, but the service was terrible."
+
+An overall sentiment classifier may identify the review as negative or positive depending on its implementation. However, the more useful business information is that:
+
+* Food → Positive
+* Service → Negative
+
+The objective of this project was therefore to develop an approach capable of extracting specific aspects from customer reviews and associating each aspect with its corresponding sentiment.
+
+3. PROJECT OBJECTIVES
+
+The main objectives of the project were to:
+
+* Analyze customer reviews using Natural Language Processing techniques.
+* Identify important aspects mentioned in customer reviews.
+* Determine the sentiment associated with individual aspects.
+* Move beyond overall review-level sentiment analysis.
+* Generate structured insights that can be used to understand customer experiences.
+* Present the resulting insights through a dashboard.
+
+4. DATA COLLECTION
+
+Customer reviews were collected for analysis and subsequently processed to create a dataset suitable for aspect-based sentiment analysis.
+
+The project focuses on restaurant customer feedback, allowing the analysis to examine specific parts of the customer experience rather than treating every review as a single sentiment.
+
+The repository contains the main analysis notebook, `Chicken_Republic_ABSA.ipynb`, as well as a Power BI dashboard file used to present the resulting analysis.
+
+5. DATA PREPROCESSING
+
+Before performing aspect and sentiment analysis, the review data was prepared for Natural Language Processing.
+
+The preprocessing stage was used to clean and standardize the textual data so that subsequent NLP techniques could operate on more consistent input.
+
+The processing included preparing customer-review text for aspect extraction and sentiment analysis and organizing the resulting information into a structured form for subsequent analysis and visualization.
+
+6. ASPECT-BASED SENTIMENT ANALYSIS
+
+Aspect-Based Sentiment Analysis consists of two important tasks:
+
+1. Identifying the aspect being discussed.
+2. Determining the sentiment associated with that aspect.
+
+For example, a review such as:
+
+"The food was great but the staff were rude."
+
+can be transformed into structured information:
+
+| Aspect | Sentiment |
+| ------ | --------- |
+| Food   | Positive  |
+| Staff  | Negative  |
+
+This allows the analysis to distinguish between different components of the customer experience within the same review.
+
+7. ASPECT EXTRACTION
+
+The project identifies specific aspects of the restaurant experience mentioned in customer reviews.
+
+Examples of aspects investigated include:
+
+* Food
+* Staff
+* Service
+
+Aspect extraction makes it possible to determine which parts of the customer experience are being discussed most frequently and what customers are saying about those areas.
+
+Instead of simply counting positive and negative reviews, the analysis can therefore examine sentiment at the level of individual business attributes.
+
+8. SENTIMENT ANALYSIS
+
+After identifying the relevant aspects, sentiment analysis was applied to determine the polarity associated with each aspect.
+
+The sentiment categories used in the analysis distinguish between:
+
+* Positive
+* Negative
+* Neutral
+
+This produces an aspect-sentiment representation of customer feedback.
+
+For example, a review containing both positive and negative opinions can contribute separately to the sentiment statistics of the aspects mentioned in that review.
+
+9. ANALYTICAL WORKFLOW
+
+The overall analytical workflow can be summarized as:
+
+Customer Reviews
+↓
+Data Collection
+↓
+Text Preprocessing
+↓
+Aspect Identification
+↓
+Sentiment Analysis
+↓
+Aspect-Sentiment Results
+↓
+Business Analysis
+↓
+Power BI Dashboard
+
+10. BUSINESS INSIGHTS
+
+The main advantage of the approach is that it provides a more detailed view of customer satisfaction.
+
+Instead of simply reporting that customers are generally positive or negative, the analysis can answer questions such as:
+
+* How do customers feel about the food?
+* How do customers feel about staff interactions?
+* Which aspects receive the most negative feedback?
+* Which aspects receive the most positive feedback?
+* What areas of the customer experience may require attention?
+
+This type of analysis can help businesses identify specific operational areas that influence customer satisfaction.
+
+11. DATA VISUALIZATION AND DASHBOARD
+
+The project includes a Power BI dashboard for presenting the results of the analysis.
+
+The dashboard provides a visual representation of the extracted aspect and sentiment information, allowing the results to be examined more easily than through raw textual data alone.
+
+The Power BI project is included in the repository as:
+
+`chicken_republic_absa_dashboard.pbix`
+
+The dashboard complements the NLP workflow by converting the extracted customer-feedback information into business-oriented visual insights.
+
+12. TOOLS AND TECHNOLOGIES
+
+The project uses Python-based Natural Language Processing and data-analysis tools together with Power BI for visualization.
+
+Programming Language
+
+* Python
+
+Data Analysis
+
+* Pandas
+* NumPy
+
+Natural Language Processing
+
+* NLP techniques
+* Sentiment analysis
+* Aspect extraction
+
+Machine Learning / Deep Learning
+
+* Scikit-learn
+* Transformer-based NLP techniques
+
+Visualization
+
+* Power BI
+* Seaborn
+* Matplotlib
+
+13. PROJECT OUTPUT
+
+The project produces structured aspect-level sentiment information from customer reviews.
+
+Instead of producing only an overall sentiment label for each review, the system identifies the aspects being discussed and associates sentiment with those aspects.
+
+The results can subsequently be analyzed through the accompanying Power BI dashboard.
+
+14. LIMITATIONS
+
+Aspect-Based Sentiment Analysis can be challenging because customer reviews often contain informal language, ambiguous expressions, sarcasm, spelling errors, and multiple opinions within the same sentence.
+
+A review may also discuss several aspects simultaneously, with different sentiments associated with each aspect.
+
+Consequently, aspect extraction and sentiment classification can be affected by the complexity and context of natural language.
+
+15. CONCLUSION
+
+This project demonstrates the application of Natural Language Processing to customer-review analysis using Aspect-Based Sentiment Analysis.
+
+Rather than treating an entire review as a single sentiment, the approach identifies specific aspects of the customer experience and determines the sentiment associated with each aspect.
+
+The resulting analysis provides more granular information about customer opinions and can help businesses understand which areas of their service generate positive or negative feedback.
+
+The project combines NLP, sentiment analysis, data analysis, and business intelligence through the integration of Python-based analysis with a Power BI dashboard.
